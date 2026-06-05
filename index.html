@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nuestra historia en 6 meses 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset y optimización táctil */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #fff0f3 100%);
+            color: #4a3e3d;
+            line-height: 1.6;
+            padding: 30px 0 60px 0;
+            overflow-x: hidden;
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 540px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Encabezado */
+        .encabezado {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 3rem;
+            color: #d90429;
+            margin-bottom: 5px;
+        }
+
+        .subtitulo {
+            font-size: 0.9rem;
+            color: #b56576;
+            letter-spacing: 0.5px;
+            font-weight: 300;
+        }
+
+        /* Línea de tiempo */
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 35px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 15px;
+            bottom: 15px;
+            width: 3px;
+            background: linear-gradient(to bottom, #ffb7c5, #ff4d6d, #ffb7c5);
+            border-radius: 3px;
+        }
+
+        /* Tarjeta de Evento */
+        .evento {
+            position: relative;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 183, 197, 0.4);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(240, 101, 122, 0.06);
+            animation: entradaSuave 0.8s ease-out;
+        }
+
+        @keyframes entradaSuave {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .evento::before {
+            content: '❤️';
+            position: absolute;
+            left: -32px;
+            top: 22px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            background: #fff;
+            border: 2px solid #ff4d6d;
+            box-shadow: 0 3px 8px rgba(255, 77, 109, 0.15);
+            z-index: 2;
+        }
+
+        .fecha {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ff4d6d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: inline-block;
+            background: #fff0f3;
+            padding: 3px 10px;
+            border-radius: 15px;
+        }
+
+        .historia {
+            font-size: 0.9rem;
+            color: #4a3e3d;
+            line-height: 1.6;
+        }
+        
+        .historia strong {
+            color: #c9184a;
+            font-weight: 600;
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        /* Contenedor general de Fotos */
+        .foto {
+            margin-top: 15px;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            background: #f7f1eb;
+        }
+
+        /* Ajuste para fotos horizontales normales */
+        .foto img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* NUEVA REGLA: Forzar un límite menor para fotos verticales grandes */
+        .foto.foto-vertical img {
+            height: 280px; /* Evita que la foto ocupe toda la pantalla del móvil */
+            object-fit: cover; /* Centra y recorta los lados sobrantes sin estirar */
+        }
+
+        .pie-foto {
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 8px;
+            color: #8c7875;
+            background: #fff;
+            font-style: italic;
+            border-top: 1px solid #fff0f3;
+        }
+
+        /* Botón Volver */
+        .centrar {
+            text-align: center;
+            margin-top: 35px;
+            padding: 0 10px;
+        }
+
+        .volver {
+            display: block;
+            background: linear-gradient(135deg, #ff4d6d 0%, #ff758f 100%);
+            color: white;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+            transition: transform 0.1s ease;
+        }
+
+        .volver:active {
+            transform: scale(0.98);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+    <div class="encabezado">
+        <h1>Nuestra historia</h1>
+        <div class="subtitulo">Primeros 6 meses contigo, una vida por delante</div>
+    </div>
+
+    <div class="timeline">
+        
+        <!-- ACTO I -->
+        <div class="evento">
+            <div class="fecha">✦ Acto I · Julio del 2025</div>
+            <div class="historia">
+                <strong>Nuestro Primer acercamiento real.</strong> 
+                <p>Hubo un día, allí en tu casa, donde el tiempo simplemente dejó de importar. Me invitaste a reconectar, sin saber que aquel encuentro cambiaría el mapa de mi vida entera. Hablamos durante horas, y en cada una de tus risas sentía que algo hermoso comenzamos a despertar, aunque el destino aún nos pedía un poco de paciencia.</p>
+                <br>
+                <p>Fue el azar, o quizás el destino, quien nos llevó a casa de Emilio; pero fue allí donde nuestra historia se escribió por primera vez. Y fue en ese preciso instante, entre risas y coincidencias, que descubrí el nombre de mi norte: mi pequeño y hermoso Cangrejito.</p>
+            </div>
+            <div class="foto">
+                <img src="assets/assets_1.jpg" alt="Nuestro primer acercamiento">
+                <div class="pie-foto">La razón de mi sonrisa</div>
+            </div>
+        </div>
+
+        <!-- ACTO II (Aquí aplicamos la clase foto-vertical) -->
+        <div class="evento">
+            <div class="fecha">✦ Acto II · 7 de Diciembre del 2025</div>
+            <div class="historia">
+                <strong>El comienzo de toda nuestra historia</strong> 
+                <p>Todavía recuerdo la mezcla de ansiedad, miedo y adrenalina que me recorría cada vez que te miraba. Sabía que te quedarías dos semanas en casa, y aunque mi corazón lo deseaba más que nada, el miedo al rechazo era una sombra constante que no me dejaba ver con claridad. Me preguntaba si era el momento, si debía arriesgarme o esperar a que las piezas encajaran por sí solas.</p>
+                <br>
+                <p>Pero entonces, el miedo se disolvió en el instante en que me hiciste el hombre más feliz del mundo al aceptar ser mi novia. En ese momento, las dudas se transformaron en un viaje lleno de recuerdos, risas y anécdotas que, sin saberlo, estábamos guardando para el futuro. Al mirarte, supe la verdad: siempre había sido nuestro momento; solo que, al principio, no tuve la valentía necesaria para reconocerlo.</p>
+            </div>
+            <!-- Añadida la clase 'foto-vertical' para controlar el tamaño gigante -->
+            <div class="foto foto-vertical">
+                <img src="assets/assets_2.jpg" alt="Primera cita">
+                <div class="pie-foto">Nuestra Primera foto como novios</div>
+            </div>
+        </div>
+
+        <!-- ACTO III (Flores Amarillas) -->
+        <div class="evento">
+            <div class="fecha">✦ Acto III · 14 de febrero del 2026</div>
+            <div class="historia">
+                <strong>Nuestro primer viaje juntos.</strong> 
+                <p>Dentro de todos mis planes y mapas trazados, nunca estuvo la idea de escaparnos un fin de semana. Solo eran dos días, pero se convirtieron en un paréntesis lleno de magia donde descubrí una ciudad nueva junto a la persona que amo.</p>
+                <p>Cada museo, cada edificio antiguo, cada catedral imponente y cada paso que dimos por sus calles se sintió distinto, cargado de un significado especial. Todo brillaba más porque estaba a tu lado, celebrando una fecha que, a día de hoy, sigo recordando con la misma nostalgia y el mismo cariño con el que viví cada minuto de aquel viaje. Fuiste tú quien convirtió esos dos días en un recuerdo eterno.</p>
+            </div>
+            <div class="foto">
+                <img src="assets/assets_3.jpg" alt="Flores amarillas">
+                <div class="pie-foto">Nuestra primera cena romantica</div>
+            </div>
+        </div>
+
+        <!-- ACTO IV (Canciones) -->
+        <div class="evento">
+            <div class="fecha">✦ Mes 3 · Canciones</div>
+            <div class="historia">
+                <strong>Latidos convertidos en música.</strong> 
+                Cada vez que escucho [Canción] me transporto directo a esa tarde lluviosa en la que te burlaste de mí por cantar tan desafinado. No me importó seguir haciendo el ridículo, porque ver tus ojos achinarse de la risa era la única melodía que me interesaba escuchar.
+            </div>
+            <div class="foto">
+                <img src="ruta-de-tu-foto4.jpg" alt="Nuestras canciones">
+                <div class="pie-foto">🎧 Lo que suena en mi mente cuando te pienso</div>
+            </div>
+        </div>
+
+        <!-- ACTO V (Hoy) -->
+        <div class="evento">
+            <div class="fecha">✦ HOY · 6 meses</div>
+            <div class="historia">
+                <strong>180 días después...</strong> 
+                Hoy sigo sin saber definir el amor en un diccionario, pero contigo aprendí que se parece mucho a elegir lavar los platos en silencio solo para verte leer tranquila. Es mandarte un enlace cualquiera a mitad del día solo para imaginarme tu sonrisa al otro lado de la pantalla. Gracias por estos 6 meses.
+            </div>
+            <div class="foto">
+                <img src="ruta-de-tu-foto5.jpg" alt="Nosotros hoy">
+                <div class="pie-foto">📅 Medio año juntos... y es solo el prólogo.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="centrar">
+        <a href="index.html" class="volver">← Volver al menú principal</a>
+    </div>
+</div>
+
+</body>
+</html>
