@@ -23,7 +23,7 @@
             color: #4a3e3d;
             line-height: 1.6;
             padding: 30px 0 60px 0;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Evita scroll horizontal */
         }
 
         .contenedor {
@@ -160,10 +160,10 @@
         /* NUEVA REGLA: Muestra la foto completamente entera sin recortar nada */
         .foto.foto-completa img {
             width: 100%;
-            height: auto; /* Permite que crezca según la proporción real de la imagen */
-            max-height: 450px; /* Límite para que no se vuelva kilométrica en pantallas largas */
-            object-fit: contain; /* Encaja la foto entera en el espacio disponible */
-            background: #fff; /* Fondo limpio por si la foto no cubre los costados */
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            background: #fff;
         }
 
         .pie-foto {
@@ -199,6 +199,174 @@
         .volver:active {
             transform: scale(0.98);
             opacity: 0.9;
+        }
+
+        /* ========== ADAPTACIONES RESPONSIVAS SIN ESPACIOS VACIOS ========== */
+        
+        /* Tablets en vertical (768px - 1024px) */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .contenedor {
+                max-width: 700px;
+                padding: 0 30px;
+            }
+            h1 {
+                font-size: 3.5rem;
+            }
+            .subtitulo {
+                font-size: 1rem;
+            }
+            .evento {
+                padding: 25px;
+                margin-bottom: 35px;
+            }
+            .historia {
+                font-size: 1rem;
+            }
+            .foto img {
+                height: 280px;
+            }
+            .foto.foto-completa img {
+                max-height: 500px;
+            }
+            .timeline {
+                padding-left: 35px;
+            }
+            .timeline::before {
+                left: 12px;
+            }
+            .evento::before {
+                left: -38px;
+                width: 28px;
+                height: 28px;
+                font-size: 13px;
+            }
+        }
+
+        /* Computadoras / Pantallas grandes (min 1025px) */
+        @media (min-width: 1025px) {
+            body {
+                padding: 40px 0 70px 0;
+            }
+            .contenedor {
+                max-width: 800px;
+                padding: 0 40px;
+            }
+            h1 {
+                font-size: 4rem;
+            }
+            .subtitulo {
+                font-size: 1.1rem;
+            }
+            .evento {
+                padding: 30px;
+                margin-bottom: 40px;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+            .evento:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 12px 28px rgba(240, 101, 122, 0.12);
+            }
+            .historia {
+                font-size: 1.05rem;
+            }
+            .fecha {
+                font-size: 0.8rem;
+            }
+            .foto img {
+                height: 320px;
+            }
+            .foto.foto-completa img {
+                max-height: 550px;
+            }
+            .timeline {
+                padding-left: 40px;
+            }
+            .timeline::before {
+                left: 15px;
+                width: 4px;
+            }
+            .evento::before {
+                left: -44px;
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+            .volver {
+                max-width: 300px;
+                margin: 0 auto;
+                transition: transform 0.2s ease, opacity 0.2s ease;
+            }
+            .volver:hover {
+                transform: scale(1.02);
+                opacity: 0.95;
+            }
+            .volver:active {
+                transform: scale(0.98);
+            }
+        }
+
+        /* Teléfonos muy pequeños (menos de 380px) */
+        @media (max-width: 380px) {
+            .contenedor {
+                padding: 0 15px;
+            }
+            h1 {
+                font-size: 2.4rem;
+            }
+            .subtitulo {
+                font-size: 0.75rem;
+            }
+            .evento {
+                padding: 15px;
+            }
+            .historia {
+                font-size: 0.85rem;
+            }
+            .foto img {
+                height: 180px;
+            }
+            .foto.foto-completa img {
+                max-height: 350px;
+            }
+            .timeline {
+                padding-left: 22px;
+            }
+            .evento::before {
+                left: -28px;
+                width: 20px;
+                height: 20px;
+                font-size: 9px;
+            }
+            .fecha {
+                font-size: 0.65rem;
+            }
+            .pie-foto {
+                font-size: 0.65rem;
+                padding: 6px;
+            }
+            .volver {
+                padding: 14px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Orientación horizontal en móviles */
+        @media (max-width: 850px) and (orientation: landscape) {
+            body {
+                padding: 20px 0 40px 0;
+            }
+            .evento {
+                margin-bottom: 20px;
+            }
+            .foto img {
+                height: 160px;
+            }
+            .foto.foto-completa img {
+                max-height: 280px;
+            }
+            .timeline {
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -280,7 +448,8 @@
                 <img src="assets/assets_5.jpg" alt="Nosotros hoy">
                 <div class="pie-foto"> 
                     <p>Medio año juntos... y es solo el prólogo</p> 
-                    <p>¿Estás lista para escribir el resto del libro conmigo?</p>.</div>
+                    <p>¿Estás lista para escribir el resto del libro conmigo?</p>
+                </div>
             </div>
         </div>
 
